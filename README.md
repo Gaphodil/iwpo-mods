@@ -1,0 +1,1 @@
+Copy the .json and folder to `data/lib/mods` in the IWPO installation.

@@ -1,0 +1,21 @@
+{
+  "comment": "This mod allows IWPO names to be opaque (default), faded, or hidden. Fully replaces onlinePlayerDraw.gml. (Keybind is currently ignored due to bug)",
+  "additional_code": [
+    {
+      "occurrence": "pre",
+      "event": "worldCreate",
+      "code": "@text_mode=0; @text_timer=0;"
+    },
+    {
+      "occurrence": "post",
+      "event": "worldEndStep",
+      "codeFile": "name_opacity/postWorldEndStep.gml"
+    },
+    {
+      "occurrence": "pre",
+      "event": "onlinePlayerDraw",
+      "codeFile": "name_opacity/onlinePlayerDraw.gml"
+    }
+  ],
+  "keybinds": ["toggle_name_visibility=u"]
+}
