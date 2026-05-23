@@ -8,6 +8,11 @@
     },
     {
       "occurrence": "post",
+      "event": "worldCreate",
+      "codeFile": "name_opacity/postWorldCreate.gml"
+    },
+    {
+      "occurrence": "post",
       "event": "worldEndStep",
       "codeFile": "name_opacity/postWorldEndStep.gml"
     },
@@ -15,6 +20,16 @@
       "occurrence": "pre",
       "event": "onlinePlayerDraw",
       "codeFile": "name_opacity/onlinePlayerDraw.gml"
+    },
+    {
+      "occurrence": "pre",
+      "event": "gameEnd",
+      "codeFile": "name_opacity/preGameEnd.gml"
+    },
+    {
+      "occurrence": "pre",
+      "event": "worldGameEnd",
+      "codeFile": "name_opacity/preWorldGameEnd.gml"
     }
   ],
   "keybinds": ["toggle_name_visibility=u"]

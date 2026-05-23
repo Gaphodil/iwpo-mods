@@ -19,11 +19,11 @@ if(@text_timer > 0){
 
 // dupe the onlineStatusTextInstance code
 if (@onlineStatusText != "") {
-	if (!instance_exists(@onlineStatusTextInstance)) {
-		@onlineStatusTextInstance = instance_create(20, 20, @playerSaved);
-	}
-	@onlineStatusTextInstance.image_alpha = 1.1;
-	@onlineStatusTextInstance.@text = "[Online] " + @onlineStatusText;
+    if (!instance_exists(@onlineStatusTextInstance)) {
+        @onlineStatusTextInstance = instance_create(20, 20, @playerSaved);
+    }
+    @onlineStatusTextInstance.image_alpha = 1.1;
+    @onlineStatusTextInstance.@text = "[Online] " + @onlineStatusText;
 } else if instance_exists(@onlineStatusTextInstance) {
-	with (@onlineStatusTextInstance) instance_destroy();
+    with (@onlineStatusTextInstance) instance_destroy();
 }
