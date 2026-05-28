@@ -1,0 +1,92 @@
+{
+  "comment": "This mod reads player sprites that are placed in a 'iwposkins' folder in the same directory as the patched game executable. Structure should be 'skinname/state.png' in the strip format, e.g. 'crimson/slide.png'. Available states are idle, jump, run, fall, and slide; bow can optionally be provided. Frame count and origin can be set by adding 'info.ini' to the skin folder, but animation behaviour is game-dependent. (Keybind currently ignored due to bug in GMS converter. Parameters must be set in config as defaults here are ignored in GMS converter. Hooks with arguments are required in all mods for GM8.2 compatibility.)",
+  "additional_code": [
+    {
+      "occurrence": "post",
+      "event": "worldCreate",
+      "code": "if (not instance_exists(@SkinSelector)) instance_create(0,0,@SkinSelector);"
+    },
+    {
+      "occurrence": "pre",
+      "event": "worldEndStep",
+      "code": "with (@SkinSelector) if (@init) @poss_UpdatePlayerSprite();"
+    },
+    {
+      "occurrence": "post",
+      "event": "worldGameEnd",
+      "codeFile": "skin_selector/_Cleanup.gml"
+    },
+    {
+      "occurrence": "post",
+      "event": "gameEnd",
+      "codeFile": "skin_selector/_Cleanup.gml"
+    }
+  ],
+  "scripts": [
+    {
+      "name": "poss_object_index_exists",
+      "codeFile": "skin_selector/__object_index_exists.gml"
+    },
+    {
+      "name": "poss_sprite_index_exists",
+      "codeFile": "skin_selector/__sprite_index_exists.gml"
+    },
+    {
+      "name": "poss_InitSkinMod",
+      "codeFile": "skin_selector/InitSkinMod.gml"
+    },
+    {
+      "name": "poss_MapSprites",
+      "codeFile": "skin_selector/MapSprites.gml"
+    },
+    {
+      "name": "poss_ReplaceSprites",
+      "codeFile": "skin_selector/ReplaceSprites.gml"
+    },
+    {
+      "name": "poss_UpdatePlayerSprite",
+      "codeFile": "skin_selector/UpdatePlayerSprite.gml"
+    }
+  ],
+  "objects": [
+    {
+      "name": "SkinSelector",
+      "visible": true,
+      "depth": -1000,
+      "persistent": true,
+      "events": {
+        "Create": { "codeFile": "skin_selector/_Create.gml" },
+        "EndStep": { "codeFile": "skin_selector/_EndStep.gml" },
+        "Draw": { "codeFile": "skin_selector/_Draw.gml" }
+      }
+    }
+  ],
+  "parameters": [
+    "sprite_idle=sprPlayerIdle",
+    "sprite_jump=sprPlayerJump",
+    "sprite_run=sprPlayerRunning",
+    "sprite_fall=sprPlayerFall",
+    "sprite_slide=sprPlayerSliding",
+    "sprite_bow=sprBow",
+    "object_bow=bow",
+    "max_search_depth=10000"
+  ],
+  "hooks": {
+    "OnUpdatePlayerCount": {
+      "code": "_ = argument0;"
+    },
+    "OnTcpReceived": {
+      "code": "_ = argument0; _ = argument1;"
+    },
+    "OnUdpReceived": {
+      "code": "_ = argument0; _ = argument1;"
+    },
+    "OnPlayerMovedSending": {
+      "code": "_ = argument0; _ = argument1;"
+    },
+    "OnPlayerMovedReceiving": {
+      "code": "_ = argument0; _ = argument1;"
+    }
+  },
+  "keybinds": ["open_skins_menu=l"]
+}
