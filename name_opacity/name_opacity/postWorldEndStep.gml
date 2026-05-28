@@ -1,5 +1,6 @@
-// if (keyboard_check_pressed(%keybind_toggle_name_visibility)) {
-if (keyboard_check_pressed(ord("U"))) {
+var @naop_key; @naop_key = ord("U");
+if ('%keybind_toggle_name_visibility' != '') @naop_key = %keybind_toggle_name_visibility -0;
+if (keyboard_check_pressed(@naop_key)) {
     @text_mode += 1;
     @text_mode = @text_mode mod 3;
     

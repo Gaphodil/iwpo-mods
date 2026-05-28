@@ -1,5 +1,5 @@
 {
-  "comment": "This mod allows IWPO names to be opaque (default), faded, or hidden. Fully replaces onlinePlayerDraw.gml. (Keybind is currently ignored due to bug)",
+  "comment": "This mod allows IWPO names to be opaque (default), faded, or hidden. Fully replaces onlinePlayerDraw.gml. (Keybind ignored in GMS due to bug in GMS converter. Hooks with arguments are required in all mods for GM8.2 compatibility.)",
   "additional_code": [
     {
       "occurrence": "pre",
@@ -32,5 +32,22 @@
       "codeFile": "name_opacity/preWorldGameEnd.gml"
     }
   ],
+  "hooks": {
+    "OnUpdatePlayerCount": {
+      "code": "_ = argument0;"
+    },
+    "OnTcpReceived": {
+      "code": "_ = argument0; _ = argument1;"
+    },
+    "OnUdpReceived": {
+      "code": "_ = argument0; _ = argument1;"
+    },
+    "OnPlayerMovedSending": {
+      "code": "_ = argument0; _ = argument1;"
+    },
+    "OnPlayerMovedReceiving": {
+      "code": "_ = argument0; _ = argument1;"
+    }
+  },
   "keybinds": ["toggle_name_visibility=u"]
 }
