@@ -84,12 +84,12 @@ if (not @preload) {
     @skins_bow   = ds_map_create();
 }
 
-@skinsel_idle = 0;
-@skinsel_jump = 0;
-@skinsel_run = 0;
-@skinsel_fall = 0;
-@skinsel_slide = 0;
-@skinsel_bow = 0;
+@skinsel_idle   = -1;
+@skinsel_jump   = -1;
+@skinsel_run    = -1;
+@skinsel_fall   = -1;
+@skinsel_slide  = -1;
+@skinsel_bow    = -1;
 
 if (@poss_sprite_index_exists("%sprite_idle"))
     @skinsel_idle = %sprite_idle;
