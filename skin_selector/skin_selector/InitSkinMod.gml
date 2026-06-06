@@ -95,6 +95,8 @@ if (@poss_sprite_index_exists("%sprite_idle"))
     @skinsel_idle = %sprite_idle;
 else if (@poss_sprite_index_exists("sprPlayerIdle"))
     @skinsel_idle = sprPlayerIdle;
+else if (@poss_sprite_index_exists("sPlayerIdle"))
+    @skinsel_idle = sPlayerIdle;
 else if (@poss_sprite_index_exists("spr_player_idle"))
     @skinsel_idle = spr_player_idle;
 
@@ -102,6 +104,8 @@ if (@poss_sprite_index_exists("%sprite_jump"))
     @skinsel_jump = %sprite_jump;
 else if (@poss_sprite_index_exists("sprPlayerJump"))
     @skinsel_jump = sprPlayerJump;
+else if (@poss_sprite_index_exists("sPlayerJump"))
+    @skinsel_jump = sPlayerJump;
 else if (@poss_sprite_index_exists("spr_player_jump"))
     @skinsel_jump = spr_player_jump;
 
@@ -111,6 +115,10 @@ else if (@poss_sprite_index_exists("sprPlayerRunning"))
     @skinsel_run = sprPlayerRunning;
 else if (@poss_sprite_index_exists("sprPlayerRun"))
     @skinsel_run = sprPlayerRun;
+else if (@poss_sprite_index_exists("sPlayerRunning"))
+    @skinsel_run = sPlayerRunning;
+else if (@poss_sprite_index_exists("sPlayerRun"))
+    @skinsel_run = sPlayerRun;
 else if (@poss_sprite_index_exists("spr_player_running"))
     @skinsel_run = spr_player_running;
 else if (@poss_sprite_index_exists("spr_player_run"))
@@ -120,6 +128,8 @@ if (@poss_sprite_index_exists("%sprite_fall"))
     @skinsel_fall = %sprite_fall;
 else if (@poss_sprite_index_exists("sprPlayerFall"))
     @skinsel_fall = sprPlayerFall;
+else if (@poss_sprite_index_exists("sPlayerFall"))
+    @skinsel_fall = sPlayerFall;
 else if (@poss_sprite_index_exists("spr_player_fall"))
     @skinsel_fall = spr_player_fall;
 
@@ -129,6 +139,10 @@ else if (@poss_sprite_index_exists("sprPlayerSliding"))
     @skinsel_slide = sprPlayerSliding;
 else if (@poss_sprite_index_exists("sprPlayerSlide"))
     @skinsel_slide = sprPlayerSlide;
+else if (@poss_sprite_index_exists("sPlayerSliding"))
+    @skinsel_slide = sPlayerSliding;
+else if (@poss_sprite_index_exists("sPlayerSlide"))
+    @skinsel_slide = sPlayerSlide;
 else if (@poss_sprite_index_exists("spr_player_sliding"))
     @skinsel_slide = spr_player_sliding;
 else if (@poss_sprite_index_exists("spr_player_slide"))
@@ -140,6 +154,10 @@ else if (@poss_sprite_index_exists("sprBow"))
     @skinsel_bow = sprBow;
 else if (@poss_sprite_index_exists("sprPlayerBow"))
     @skinsel_bow = sprPlayerBow;
+else if (@poss_sprite_index_exists("sBow"))
+    @skinsel_bow = sBow;
+else if (@poss_sprite_index_exists("sPlayerBow"))
+    @skinsel_bow = sPlayerBow;
 else if (@poss_sprite_index_exists("spr_bow"))
     @skinsel_bow = spr_bow;
 
