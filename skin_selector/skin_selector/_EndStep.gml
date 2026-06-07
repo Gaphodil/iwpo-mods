@@ -10,15 +10,15 @@ if (keyboard_check_pressed(@poss_key)) {
 
 // cycle with ctrl+arrows
 if (@show_selector and keyboard_check(vk_control)) {
-    var diff; diff = 0;
-    if (keyboard_check_pressed(vk_up)) diff = -1;
-    if (keyboard_check_pressed(vk_down)) diff = 1;
+    var @diff; @diff = 0;
+    if (keyboard_check_pressed(vk_up)) @diff = -1;
+    if (keyboard_check_pressed(vk_down)) @diff = 1;
     if (@skin_count > 9) {
-        if (keyboard_check_pressed(vk_left)) diff = -5;
-        if (keyboard_check_pressed(vk_right)) diff = 5;
+        if (keyboard_check_pressed(vk_left)) @diff = -5;
+        if (keyboard_check_pressed(vk_right)) @diff = 5;
     }
-    @selector_index = (@selector_index + diff + @skin_count) mod @skin_count;
-    if (diff != 0) {
+    @selector_index = (@selector_index + @diff + @skin_count) mod @skin_count;
+    if (@diff != 0) {
         @poss_ReplaceSprites();
     }
 }

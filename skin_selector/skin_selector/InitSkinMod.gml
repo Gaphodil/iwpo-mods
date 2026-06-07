@@ -7,9 +7,9 @@
 
 // look in exe area for skins folder
 @skins_dir = working_directory + "\iwposkins\";
-var attempt; attempt = 0;
+var @attempt; @attempt = 0;
 while (not directory_exists(@skins_dir)) {
-    if (attempt == 3) return false;
+    if (@attempt == 3) return false;
     #if GM8
         show_message("[SkinMod] No iwposkins folder found! Add to exe folder and try again");
     #else
@@ -17,7 +17,7 @@ while (not directory_exists(@skins_dir)) {
             "","",working_directory,
             "[SkinMod] No iwposkins folder found! Drag here and cancel this");
     #endif
-    attempt += 1;
+    @attempt += 1;
 }
 
 // load buffer as f2/tempfile protection
@@ -40,8 +40,8 @@ if (file_exists("__online_skin_selector")) {
 
     // gm8 validation without ds_exists: last loaded sprite index
     #if GM8
-        var tempspr; tempspr = @buffer_read_uint16(@poss_buffer);
-        if (sprite_exists(tempspr))
+        var @tempspr; @tempspr = @buffer_read_uint16(@poss_buffer);
+        if (sprite_exists(@tempspr))
             @preload = true;
     #else
         if (ds_exists(@skin_names, ds_type_list) and ds_exists(@skins_bow, ds_type_map))
@@ -56,8 +56,8 @@ if (file_exists("__online_skin_selector")) {
 
 if (not @preload) {
     // save ever dir name in @skins_dir
-    var file; file = file_find_first(@skins_dir + "*", fa_directory);
-    if (file == "") {
+    var @file; @file = file_find_first(@skins_dir + "*", fa_directory);
+    if (@file == "") {
         file_find_close();
         show_message("[SkinMod] No skins found in iwposkins folder!");
         return false;
@@ -66,11 +66,11 @@ if (not @preload) {
     @skin_names = ds_list_create();
     ds_list_add(@skin_names, "Default");
     do {
-        if (directory_exists(@skins_dir + file)
-            and file != "." and file != "..")
-            ds_list_add(@skin_names, filename_name(file));
-        file = file_find_next();
-    } until (file == "")
+        if (directory_exists(@skins_dir + @file)
+            and @file != "." and @file != "..")
+            ds_list_add(@skin_names, filename_name(@file));
+        @file = file_find_next();
+    } until (@file == "")
     file_find_close();
 }
 @skin_count = ds_list_size(@skin_names);

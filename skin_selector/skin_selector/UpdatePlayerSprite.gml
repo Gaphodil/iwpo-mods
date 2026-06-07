@@ -1,13 +1,13 @@
 /// UpdatePlayerSprite
 with (%player) {
-    var spr_name; spr_name = sprite_get_name(sprite_index);
-    if (other.@last_spr_name != spr_name) {
-        other.@last_spr_name = spr_name;
+    var @spr_name; @spr_name = sprite_get_name(sprite_index);
+    if (other.@last_spr_name != @spr_name) {
+        other.@last_spr_name = @spr_name;
         other.@def_spr_img_num = sprite_get_number(sprite_index);
         other.@real_image_index = -1;
         other.@appx_image_speed = -1;
     }
-    switch (spr_name) {
+    switch (@spr_name) {
         case other.@name_idle:
             sprite_index = other.@skinsel_idle;
             break;
@@ -48,14 +48,14 @@ with (%player) {
 
 #if PLAYER2
 with (%player2) {
-    var spr_name; spr_name = sprite_get_name(sprite_index);
-    if (other.@last_spr_name != spr_name) {
-        other.@last_spr_name = spr_name;
+    var @spr_name; @spr_name = sprite_get_name(sprite_index);
+    if (other.@last_spr_name != @spr_name) {
+        other.@last_spr_name = @spr_name;
         other.@def_spr_img_num = sprite_get_number(sprite_index);
         other.@real_image_index = -1;
         other.@appx_image_speed = -1;
     }
-    switch (spr_name) {
+    switch (@spr_name) {
         case other.@name_idle:
             sprite_index = other.@skinsel_idle;
             break;
