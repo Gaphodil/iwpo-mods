@@ -23,7 +23,5 @@ if (@show_selector and keyboard_check(vk_control)) {
     }
 }
 
-// update sprite every frame - in pre-WorldEndStep also
-if (@init) {
-    @poss_UpdatePlayerSprite();
-}
+// update sprite every frame in pre-WorldEndStep for sending online
+//if (@init) @poss_UpdatePlayerSprite();

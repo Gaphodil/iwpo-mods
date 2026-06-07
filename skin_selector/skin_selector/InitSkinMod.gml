@@ -1,5 +1,10 @@
 /// InitSkinMod
 
+@last_spr_name = "";
+@def_spr_img_num = -1;
+@real_image_index = -1;
+@appx_image_speed = -1;
+
 // look in exe area for skins folder
 @skins_dir = working_directory + "\iwposkins\";
 var attempt; attempt = 0;
