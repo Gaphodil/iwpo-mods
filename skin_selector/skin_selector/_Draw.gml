@@ -42,7 +42,7 @@ if (@show_selector) {
     draw_text(@xoff-1, @yoff, @uitext);
     draw_text(@xoff, @yoff-1, @uitext);
     draw_set_color(c_white);
-    draw_text(@xoff, @@yoff, @uitext);
+    draw_text(@xoff, @yoff, @uitext);
 
     draw_set_alpha(@_alpha);
     draw_set_color(@_color);
