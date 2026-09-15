@@ -36,6 +36,9 @@ if (@show_selector) {
             @uitext += @temp_name + "#";
         }
     }
+#if GMS2
+    @uitext = string_replace_all(@uitext, "#", "\n");
+#endif
     draw_set_color(c_black);
     draw_text(@xoff+1, @yoff, @uitext);
     draw_text(@xoff, @yoff+1, @uitext);

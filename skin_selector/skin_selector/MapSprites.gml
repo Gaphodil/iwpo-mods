@@ -12,7 +12,7 @@ ds_map_add(@skins_bow,   "Default", @skinsel_bow)
 for (i = 1; i < @skin_count; i+=1) {
     var sname; sname = ds_list_find_value(@skin_names, i);
     var fname; fname = @skins_dir + sname;
-    var ininame; ininame = fname + "\info.ini"
+    var ininame; ininame = fname + "/info.ini"
     #if GM8
         file_copy(ininame, "poss_temp.ini");
         ininame = "poss_temp.ini";
@@ -20,40 +20,40 @@ for (i = 1; i < @skin_count; i+=1) {
     ini_open(ininame);
     ds_map_add(@skins_idle, sname,
         sprite_add(
-            fname+"\idle.png",
+            fname+"/idle.png",
             ini_read_real("idle", "imgnum", 4),
             false, false,
             ini_read_real("idle", "xorig", 17),
             ini_read_real("idle", "yorig", 23)));
     ds_map_add(@skins_jump, sname,
         sprite_add(
-            fname+"\jump.png",
+            fname+"/jump.png",
             ini_read_real("jump", "imgnum", 2),
             false, false,
             ini_read_real("jump", "xorig", 17),
             ini_read_real("jump", "yorig", 23)));
     ds_map_add(@skins_run, sname,
         sprite_add(
-            fname+"\run.png",
+            fname+"/run.png",
             ini_read_real("run", "imgnum", 4),
             false, false,
             ini_read_real("run", "xorig", 17),
             ini_read_real("run", "yorig", 23)));
     ds_map_add(@skins_fall, sname,
         sprite_add(
-            fname+"\fall.png",
+            fname+"/fall.png",
             ini_read_real("fall", "imgnum", 2),
             false, false,
             ini_read_real("fall", "xorig", 17),
             ini_read_real("fall", "yorig", 23)));
     ds_map_add(@skins_slide, sname,
         sprite_add(
-            fname+"\slide.png",
+            fname+"/slide.png",
             ini_read_real("slide", "imgnum", 2),
             false, false,
             ini_read_real("slide", "xorig", 7),
             ini_read_real("slide", "yorig", 10)));
-    if (file_exists(fname+"\bow.png")) {
+    if (file_exists(fname+"/bow.png")) {
         ds_map_add(@skins_bow, sname,
             sprite_add(
                 fname+"/bow.png",

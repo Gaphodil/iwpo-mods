@@ -1,5 +1,5 @@
 var @naop_key; @naop_key = ord("U");
-if ('%keybind_toggle_name_visibility' != '') @naop_key = %keybind_toggle_name_visibility -0;
+// if ('%keybind_toggle_name_visibility' != '') @naop_key = %keybind_toggle_name_visibility -0;
 if (keyboard_check_pressed(@naop_key)) {
     @text_mode += 1;
     @text_mode = @text_mode mod 3;
@@ -8,14 +8,17 @@ if (keyboard_check_pressed(@naop_key)) {
 } 
 if(@text_timer > 0){
     @text_timer -= 1; 
-        
+
     if(@text_mode == 0){
-            @onlineStatusText += "Names Always Visible#";
+        @onlineStatusText += "Names Always Visible#";
     }else if(@text_mode == 1){
-            @onlineStatusText += "Names Fade With Distance#";
+        @onlineStatusText += "Names Fade With Distance#";
     }if(@text_mode == 2){
-            @onlineStatusText += "Names Hidden#";
+        @onlineStatusText += "Names Hidden#";
     }
+#if GMS2
+    @onlineStatusText = string_replace_all(@onlineStatusText, "#", "\n");
+#endif
 }
 
 // dupe the onlineStatusTextInstance code

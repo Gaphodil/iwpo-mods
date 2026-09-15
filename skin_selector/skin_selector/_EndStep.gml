@@ -1,6 +1,6 @@
 // toggle gui
 var @poss_key; @poss_key = ord("L");
-if ('%keybind_open_skins_menu' != '') @poss_key = %keybind_open_skins_menu -0;
+// if ('%keybind_open_skins_menu' != '') @poss_key = %keybind_open_skins_menu -0;
 if (keyboard_check_pressed(@poss_key)) {
     if (!@init)
         @init = @poss_InitSkinMod();

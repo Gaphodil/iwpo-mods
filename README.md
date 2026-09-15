@@ -1,10 +1,18 @@
 Copy the .json and folder to `data/lib/mods` in the IWPO installation.
 
-Catalogue of IWPO mod bugs in b22:
+Catalogue of IWPO mod bugs in b22/b23:
 
 - Verve GM8.2: if `iwpo.saveGame=save_save` when a non-impossible mode save occurs a non-fatal error pops up about argument[0] not existing
 - GM8: if at least some of the hooks for `OnUpdatePlayerCount`, `OnTcpReceived`, `OnUdpReceived`, `OnPlayerMovedSending`, and `OnPlayerMovedReceiving` are not supplied with code that uses the appropriate number of arguments, a GM8.2-built game will crash at runtime when that function is called
 - GM8: custom keybinds are ignored unless they are the final custom keybind included, and resolve to the parameter symbol (%) and name without any replacement - this occurs whether the keybinds are of the same mod or of different ones
 - GMS: custom keybinds are wholly ignored and will resolve to an empty string in code
-- GMS: custom parameters must be supplied through config files or command line arguments, as the defaults in the mod json are wholly ignored and will resolve to an empty string in code
-- GMS: including multiple mods at once will throw an exception when attempting and failing to sort an array
+- GMS/GMS2: custom parameters must be supplied through config files or command line arguments, as the defaults in the mod json are wholly ignored and will resolve to an empty string in code
+- GMS/GMS2: including multiple mods at once will throw an exception when attempting and failing to sort an array
+
+in b23:
+
+- all: custom keybinds are wholly ignored and do not resolve to anything, causing failure to compile and have for the time being been commented out
+
+in b24:
+
+- GM8: cannot patch at all due to invalid `offset`

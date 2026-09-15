@@ -2,6 +2,6 @@ This mod reads player sprites that are placed in a 'iwposkins' folder in the sam
 
 Bows can also be disabled with the ini, but the image files must still exist across all players or behaviour can be unexpected. They may not be used if the bow sprite is drawn directly instead of through a bow object.
 
-Keybind hardcoded to "L" in GMS due to bug in GMS converter. `parameters` must be set in config file or command line for GMS due to defaults being ignored in GMS converter. Hooks with arguments are required in all mods for GM8.2 compatibility.
+Keybind hardcoded to "L". `parameters` must be set in config file or command line for GMS due to defaults being ignored in GMS converter. Hooks with arguments are required in all mods for GM8.2 compatibility.
 
 `max_search_depth` is a setting for GM8 initialization - because there is no `asset_get_index`, sprites and objects are searched manually once at mod initialization.

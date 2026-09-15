@@ -6,7 +6,7 @@
 @appx_image_speed = -1;
 
 // look in exe area for skins folder
-@skins_dir = working_directory + "\iwposkins\";
+@skins_dir = working_directory + "/iwposkins/";
 var @attempt; @attempt = 0;
 while (not directory_exists(@skins_dir)) {
     if (@attempt == 3) return false;
@@ -104,6 +104,8 @@ else if (@poss_sprite_index_exists("sPlayerIdle"))
     @skinsel_idle = sPlayerIdle;
 else if (@poss_sprite_index_exists("spr_player_idle"))
     @skinsel_idle = spr_player_idle;
+else if (@poss_sprite_index_exists("spr_kid_idle"))
+    @skinsel_idle = spr_kid_idle;
 
 if (@poss_sprite_index_exists("%sprite_jump"))
     @skinsel_jump = %sprite_jump;
@@ -113,6 +115,8 @@ else if (@poss_sprite_index_exists("sPlayerJump"))
     @skinsel_jump = sPlayerJump;
 else if (@poss_sprite_index_exists("spr_player_jump"))
     @skinsel_jump = spr_player_jump;
+else if (@poss_sprite_index_exists("spr_kid_jump"))
+    @skinsel_jump = spr_kid_jump;
 
 if (@poss_sprite_index_exists("%sprite_run"))
     @skinsel_run = %sprite_run;
@@ -128,6 +132,8 @@ else if (@poss_sprite_index_exists("spr_player_running"))
     @skinsel_run = spr_player_running;
 else if (@poss_sprite_index_exists("spr_player_run"))
     @skinsel_run = spr_player_run;
+else if (@poss_sprite_index_exists("spr_kid_run"))
+    @skinsel_run = spr_kid_run;
 
 if (@poss_sprite_index_exists("%sprite_fall"))
     @skinsel_fall = %sprite_fall;
@@ -137,6 +143,8 @@ else if (@poss_sprite_index_exists("sPlayerFall"))
     @skinsel_fall = sPlayerFall;
 else if (@poss_sprite_index_exists("spr_player_fall"))
     @skinsel_fall = spr_player_fall;
+else if (@poss_sprite_index_exists("spr_kid_fall"))
+    @skinsel_fall = spr_kid_fall;
 
 if (@poss_sprite_index_exists("%sprite_slide"))
     @skinsel_slide = %sprite_slide;
@@ -152,6 +160,8 @@ else if (@poss_sprite_index_exists("spr_player_sliding"))
     @skinsel_slide = spr_player_sliding;
 else if (@poss_sprite_index_exists("spr_player_slide"))
     @skinsel_slide = spr_player_slide;
+else if (@poss_sprite_index_exists("spr_kid_vine"))
+    @skinsel_slide = spr_kid_vine;
 
 if (@poss_sprite_index_exists("%sprite_bow"))
     @skinsel_bow = %sprite_bow;
