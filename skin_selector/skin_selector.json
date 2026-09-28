@@ -4,7 +4,7 @@
     {
       "occurrence": "post",
       "event": "worldCreate",
-      "code": "if (not instance_exists(@SkinSelector)) instance_create(0,0,@SkinSelector);"
+      "codeFile": "skin_selector/_postWorldCreate.gml"
     },
     {
       "occurrence": "pre",

@@ -12,7 +12,3 @@ Catalogue of IWPO mod bugs in b22/b23:
 in b23:
 
 - all: custom keybinds are wholly ignored and do not resolve to anything, causing failure to compile and have for the time being been commented out
-
-in b24:
-
-- GM8: cannot patch at all due to invalid `offset`

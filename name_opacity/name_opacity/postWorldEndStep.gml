@@ -24,7 +24,13 @@ if(@text_timer > 0){
 // dupe the onlineStatusTextInstance code
 if (@onlineStatusText != "") {
     if (!instance_exists(@onlineStatusTextInstance)) {
-        @onlineStatusTextInstance = instance_create(20, 20, @playerSaved);
+#if GMS2
+        @onlineStatusTextInstance = @create(@playerSaved);
+        @onlineStatusTextInstance.x = 20;
+        @onlineStatusTextInstance.y = 20;
+#else
+        @onlineStatusTextInstance = instance_create(20,20,@playerSaved);
+#endif
     }
     @onlineStatusTextInstance.image_alpha = 1.1;
     @onlineStatusTextInstance.@text = "[Online] " + @onlineStatusText;
